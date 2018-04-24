@@ -20,9 +20,11 @@ namespace PV178.Homeworks.HW05.Utils
             using (var resp = (HttpWebResponse) req.GetResponse())
             {
                 var dataStream = resp.GetResponseStream();
-
+                using (FileStream file = File.Create(filePath))
+                {
+                    SaveResponse(file, dataStream);
+                }
                 // TODO: add your code and call SaveResponse(...)
-
             }           
         }
 
@@ -33,8 +35,11 @@ namespace PV178.Homeworks.HW05.Utils
         /// <param name="dataStream">Stream with GPX data</param>
         private static void SaveResponse(FileStream fileStream, Stream dataStream)
         {
-            // TODO
-
+            using (MemoryStream memory = new MemoryStream())    // bad !
+            {
+                dataStream.CopyTo(memory);
+                fileStream.Write(memory.ToArray(), 0, (int)memory.Length);
+            }
         }
     }
 }

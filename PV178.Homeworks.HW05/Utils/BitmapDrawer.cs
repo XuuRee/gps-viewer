@@ -46,9 +46,12 @@ namespace PV178.Homeworks.HW05.Utils
         /// <returns>Bitmap data stream</returns>
         public Stream SaveBitmapToStream()
         {
-            // TODO 
-
-            throw new NotImplementedException();
+            using (MemoryStream memory = new MemoryStream())    // using?
+            {
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Jpeg);
+                memory.Seek(0, SeekOrigin.Begin);       // begining?
+                return memory;
+            }
         }
 
         public void Dispose()

@@ -19,9 +19,10 @@ namespace PV178.Homeworks.HW05.Utils
         /// <returns>Stream with image data</returns>
         public static Stream LoadImgToStream(string filePath)
         {
-            // TODO
-
-            throw new NotImplementedException();
+            using (FileStream file = new FileStream(filePath, FileMode.Open))
+            {
+                return file;
+            }
         }
 
         /// <summary>
@@ -33,9 +34,28 @@ namespace PV178.Homeworks.HW05.Utils
         /// <param name="fileName">Image file name</param>
         public static void SaveImgToFile(Stream stream, string outputPath, string fileName)
         {
-            // TODO
+            using (Bitmap bitmap = new Bitmap(stream))
+            {
+                ImageCodecInfo jpgEncoder = GetEncoder(MapImgFormat);
+                Encoder encoder = Encoder.Quality;
+                EncoderParameters myEncoderParameters = new EncoderParameters(1);
+                EncoderParameter myEncoderParameter = new EncoderParameter(encoder, 100L);
+                myEncoderParameters.Param[0] = myEncoderParameter;
+                bitmap.Save(outputPath + "/" + fileName, jpgEncoder, myEncoderParameters);
+            }
+        }
 
-            throw new NotImplementedException();
+        private static ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == format.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
         }
     }
 }
