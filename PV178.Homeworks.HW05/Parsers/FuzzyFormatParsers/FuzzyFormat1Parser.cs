@@ -24,28 +24,28 @@ namespace PV178.Homeworks.HW05.Parsers.FuzzyFormatParsers
         public Track ParseTrack(Stream stream)
         {
             IList<GpsCoordinates> gps = new List<GpsCoordinates> { };
-            string[] route03 = Route03ExpectedOutput.Split(',');
+            //string[] route03 = Route03ExpectedOutput.Split(',');
             using (StreamReader file = new StreamReader(stream))
             {
                 string fuzzy1 = file.ReadToEnd();
                 string[] lines = fuzzy1.Split('\n');
-                int i = 0;
+                //int i = 0;
                 foreach (string line in lines)
                 {
                     if (line != "")
                     { 
                         GpsCoordinates coordinate = ParseLine(line);
                         gps.Add(coordinate);
-                        if (coordinate.ToString() != route03[i])
-                        {
-                            Console.WriteLine((i + 1) + " " + coordinate.ToString() + "... spatne: " + route03[i]);
-                            //Console.ReadLine();
-                        }
-                        else
-                        { 
-                            Console.WriteLine((i + 1) + " " + coordinate.ToString() + "... spravne: " + route03[i]);
-                        }
-                        i += 1;
+                        //if (coordinate.ToString() != route03[i])
+                        //{
+                        //    Console.WriteLine((i + 1) + " " + coordinate.ToString() + "... spatne: " + route03[i]);
+                        //    Console.ReadLine();
+                        //}
+                        //else
+                        //{ 
+                        //    Console.WriteLine((i + 1) + " " + coordinate.ToString() + "... spravne: " + route03[i]);
+                        //}
+                        //i += 1;
                     }
                 }
                 return new Track(gps);
@@ -71,7 +71,7 @@ namespace PV178.Homeworks.HW05.Parsers.FuzzyFormatParsers
                 var result = CheckCoordinatesOrder(latitude, longitude);
                 return new GpsCoordinates(result.Item1, result.Item2);
             }
-            else if (Regex.IsMatch(line, @"^\D*\d+[^\.]*\d+[^\.]*\d+\.\d+\D+\d+[^\.]*\d+[^\.]*\d+\.\d+\D*$"))   // pouze dve souradnice, ve tvaru stupne, minuty a sekundy
+            else if (Regex.IsMatch(line, @"^\D*\d+[^\.0-9]*\d+[^\.0-9]*\d+\.\d+\D+\d+[^\.0-9]*\d+[^\.0-9]*\d+\.\d+\D*$"))   // pouze dve souradnice, ve tvaru stupne, minuty a sekundy
             {
                 matches = Regex.Matches(line, @"(\d+\.\d+|\d+)");
                 double latitude = Helpers.ConvertDMSToDD(int.Parse(matches[0].Value), int.Parse(matches[1].Value), Helpers.ParseDecimal(matches[2].Value));
@@ -89,13 +89,13 @@ namespace PV178.Homeworks.HW05.Parsers.FuzzyFormatParsers
             }
             else
             {
-                Console.ReadLine();
+                //Console.ReadLine();
                 // posledni radek! \n
                 matches = Regex.Matches(line, @"\d+\D\d+\D\d+\.\d+\D{2}((N|North|north|lat|latitude|Latitude)|(E|East|east|lon|longitude|Longitude))");
                 MatchCollection latitude = Regex.Matches(matches[0].Value, @"\d+\.\d+|\d+");
                 MatchCollection longitude = Regex.Matches(matches[1].Value, @"\d+\.\d+|\d+");
                 double lat = Helpers.ConvertDMSToDD(int.Parse(latitude[0].Value), int.Parse(latitude[1].Value), Helpers.ParseDecimal(latitude[2].Value));
-                double lon = Helpers.ConvertDMSToDD(int.Parse(longitude[0].Value), int.Parse(longitude[2].Value), Helpers.ParseDecimal(longitude[2].Value));
+                double lon = Helpers.ConvertDMSToDD(int.Parse(longitude[0].Value), int.Parse(longitude[1].Value), Helpers.ParseDecimal(longitude[2].Value));
                 var result = CheckCoordinatesOrder(lat, lon);
                 return new GpsCoordinates(result.Item1, result.Item2);
             }
