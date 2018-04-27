@@ -19,10 +19,7 @@ namespace PV178.Homeworks.HW05.Utils
         /// <returns>Stream with image data</returns>
         public static Stream LoadImgToStream(string filePath)
         {
-            using (FileStream file = new FileStream(filePath, FileMode.Open))
-            {
-                return file;
-            }
+            return new FileStream(filePath, FileMode.Open, FileAccess.Read);
         }
 
         /// <summary>
@@ -38,8 +35,10 @@ namespace PV178.Homeworks.HW05.Utils
             {
                 ImageCodecInfo jpgEncoder = GetEncoder(MapImgFormat);
                 Encoder encoder = Encoder.Quality;
+
                 EncoderParameters myEncoderParameters = new EncoderParameters(1);
                 EncoderParameter myEncoderParameter = new EncoderParameter(encoder, 100L);
+
                 myEncoderParameters.Param[0] = myEncoderParameter;
                 bitmap.Save(outputPath + "/" + fileName, jpgEncoder, myEncoderParameters);
             }

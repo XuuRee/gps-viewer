@@ -38,7 +38,7 @@ namespace PV178.Homeworks.HW05.Utils
             using (MemoryStream memory = new MemoryStream())    // bad !
             {
                 dataStream.CopyTo(memory);
-                fileStream.Write(memory.ToArray(), 0, (int)memory.Length);
+                fileStream.Write(memory.ToArray(), 0, (int) memory.Length);
             }
         }
     }

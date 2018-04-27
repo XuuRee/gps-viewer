@@ -13,59 +13,59 @@ namespace PV178.Homeworks.HW05.Tests
     [TestClass]
     public class ParserTests
     {
-        //[TestMethod]
-        //public void GpxJsonParser_ParseGpxFromFilename_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilenameTest(new GpxJsonParser(), TestPaths.Route01, Route01ExpectedOutput, "Route01Map_GpxJsonParser_ParseGpxFromFilename.jpeg");
-        //}
+        [TestMethod]
+        public void GpxJsonParser_ParseGpxFromFilename_ReturnsCorrectResult()
+        {
+            PerformParseFromFilenameTest(new GpxJsonParser(), TestPaths.Route01, Route01ExpectedOutput, "Route01Map_GpxJsonParser_ParseGpxFromFilename.jpeg");
+        }
        
-        //[TestMethod]
-        //public void GpxJsonParser_ParseGpxFromStream_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilestream(new GpxJsonParser(), TestPaths.Route01, Route01ExpectedOutput, "Route01Map_GpxJsonParser_ParseGpxFromStream.jpeg");
-        //}
+        [TestMethod]
+        public void GpxJsonParser_ParseGpxFromStream_ReturnsCorrectResult()
+        {
+            PerformParseFromFilestream(new GpxJsonParser(), TestPaths.Route01, Route01ExpectedOutput, "Route01Map_GpxJsonParser_ParseGpxFromStream.jpeg");
+        }
 
-        //[TestMethod]
-        //public void GpxJsonParser_ParseGpxFromByteArray_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromByteArray(new GpxJsonParser(), TestPaths.Route01, Route01ExpectedOutput, "Route01Map_GpxJsonParser_ParseGpxFromByteArray.jpeg");
-        //}
+        [TestMethod]
+        public void GpxJsonParser_ParseGpxFromByteArray_ReturnsCorrectResult()
+        {
+            PerformParseFromByteArray(new GpxJsonParser(), TestPaths.Route01, Route01ExpectedOutput, "Route01Map_GpxJsonParser_ParseGpxFromByteArray.jpeg");
+        }
 
-        //[TestMethod]
-        //public void GpxXmlParser_ParseGpxFromFilename_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilenameTest(new GpxXmlParser(), TestPaths.Route02, Route02ExpectedOutput, "Route02Map_GpxXmlParser_ParseGpxFromFilename.jpeg");
-        //}
+        [TestMethod]
+        public void GpxXmlParser_ParseGpxFromFilename_ReturnsCorrectResult()
+        {
+            PerformParseFromFilenameTest(new GpxXmlParser(), TestPaths.Route02, Route02ExpectedOutput, "Route02Map_GpxXmlParser_ParseGpxFromFilename.jpeg");
+        }
 
-        //[TestMethod]
-        //public void GpxXmlParser_ParseGpxFromFilestream_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilestream(new GpxXmlParser(), TestPaths.Route02, Route02ExpectedOutput, "Route02Map_GpxXmlParser_ParseGpxFromFilestream.jpeg");
-        //}
+        [TestMethod]
+        public void GpxXmlParser_ParseGpxFromFilestream_ReturnsCorrectResult()
+        {
+            PerformParseFromFilestream(new GpxXmlParser(), TestPaths.Route02, Route02ExpectedOutput, "Route02Map_GpxXmlParser_ParseGpxFromFilestream.jpeg");
+        }
 
-        //[TestMethod]
-        //public void GpxXmlParser_ParseGpxFromByteArray_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromByteArray(new GpxXmlParser(), TestPaths.Route02, Route02ExpectedOutput, "Route02Map_GpxXmlParser_ParseGpxFromByteArray.jpeg");
-        //}
+        [TestMethod]
+        public void GpxXmlParser_ParseGpxFromByteArray_ReturnsCorrectResult()
+        {
+            PerformParseFromByteArray(new GpxXmlParser(), TestPaths.Route02, Route02ExpectedOutput, "Route02Map_GpxXmlParser_ParseGpxFromByteArray.jpeg");
+        }
 
-        //[TestMethod]
-        //public void FuzzyFormatParser1_ParseFuzzyFormat1FromFilename_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilenameTest(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromFilename_Route03Map.jpeg");
-        //}
+        [TestMethod]
+        public void FuzzyFormatParser1_ParseFuzzyFormat1FromFilename_ReturnsCorrectResult()
+        {
+            PerformParseFromFilenameTest(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromFilename_Route03Map.jpeg");
+        }
 
-        //[TestMethod]
-        //public void FuzzyFormatParser1_ParseFuzzyFormat1FromFilestream_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilestream(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromFilestream_Route03Map.jpeg");
-        //}
+        [TestMethod]
+        public void FuzzyFormatParser1_ParseFuzzyFormat1FromFilestream_ReturnsCorrectResult()
+        {
+            PerformParseFromFilestream(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromFilestream_Route03Map.jpeg");
+        }
 
-        //[TestMethod]
-        //public void FuzzyFormatParser1_ParseFuzzyFormat1FromByteArray_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromByteArray(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromByteArray_Route03Map.jpeg");
-        //}
+        [TestMethod]
+        public void FuzzyFormatParser1_ParseFuzzyFormat1FromByteArray_ReturnsCorrectResult()
+        {
+            PerformParseFromByteArray(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromByteArray_Route03Map.jpeg");
+        }
 
         //[TestMethod]
         //public void FuzzyFormatParser2_ParseFuzzyFormat2FromFilename_ReturnsCorrectResult()
@@ -85,26 +85,26 @@ namespace PV178.Homeworks.HW05.Tests
         //    PerformParseFromByteArray(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromByteArray_Route04Map.jpeg");
         //}
 
-        //[TestMethod]
-        //public void GpxXmlParserForWebContent_ParseGpxFromFilename_ReturnsCorrectResult()
-        //{
-        //    WebContentDownloader.DownloadContent(TestPaths.Route05);
-        //    PerformParseFromFilenameTest(new GpxXmlParser(), TestPaths.Route05, Route05ExpectedOutput, "Route05Map_GpxXmlParserForWebContent_ParseGpxFromFilename_Route05Map.jpeg");
-        //}
+        [TestMethod]
+        public void GpxXmlParserForWebContent_ParseGpxFromFilename_ReturnsCorrectResult()
+        {
+            WebContentDownloader.DownloadContent(TestPaths.Route05);
+            PerformParseFromFilenameTest(new GpxXmlParser(), TestPaths.Route05, Route05ExpectedOutput, "Route05Map_GpxXmlParserForWebContent_ParseGpxFromFilename_Route05Map.jpeg");
+        }
 
-        //[TestMethod]
-        //public void GpxXmlParserForWebContent_ParseGpxFromFilestream_ReturnsCorrectResult()
-        //{
-        //    WebContentDownloader.DownloadContent(TestPaths.Route05);
-        //    PerformParseFromFilestream(new GpxXmlParser(), TestPaths.Route05, Route05ExpectedOutput, "Route05Map_GpxXmlParserForWebContent_ParseGpxFromFilestream_Route05Map.jpeg");
-        //}
+        [TestMethod]
+        public void GpxXmlParserForWebContent_ParseGpxFromFilestream_ReturnsCorrectResult()
+        {
+            WebContentDownloader.DownloadContent(TestPaths.Route05);
+            PerformParseFromFilestream(new GpxXmlParser(), TestPaths.Route05, Route05ExpectedOutput, "Route05Map_GpxXmlParserForWebContent_ParseGpxFromFilestream_Route05Map.jpeg");
+        }
 
-        //[TestMethod]
-        //public void GpxXmlParserForWebContent_ParseGpxFromByteArray_ReturnsCorrectResult()
-        //{
-        //    WebContentDownloader.DownloadContent(TestPaths.Route05);
-        //    PerformParseFromByteArray(new GpxXmlParser(), TestPaths.Route05, Route05ExpectedOutput, "Route05Map_GpxXmlParserForWebContent_ParseGpxFromByteArray.jpeg");
-        //}
+        [TestMethod]
+        public void GpxXmlParserForWebContent_ParseGpxFromByteArray_ReturnsCorrectResult()
+        {
+            WebContentDownloader.DownloadContent(TestPaths.Route05);
+            PerformParseFromByteArray(new GpxXmlParser(), TestPaths.Route05, Route05ExpectedOutput, "Route05Map_GpxXmlParserForWebContent_ParseGpxFromByteArray.jpeg");
+        }
 
         private void PerformParseFromFilenameTest(IGpsParser parser, string filepath, string expectedOutput, string mapName)
         {
