@@ -67,23 +67,23 @@ namespace PV178.Homeworks.HW05.Tests
             PerformParseFromByteArray(new FuzzyFormat1Parser(), TestPaths.Route03, Route03ExpectedOutput, "Route03Map_FuzzyFormatParser1_ParseFuzzyFormat1FromByteArray_Route03Map.jpeg");
         }
 
-        //[TestMethod]
-        //public void FuzzyFormatParser2_ParseFuzzyFormat2FromFilename_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilenameTest(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromFilename_Route04Map.jpeg");
-        //}
+        [TestMethod]
+        public void FuzzyFormatParser2_ParseFuzzyFormat2FromFilename_ReturnsCorrectResult()
+        {
+            PerformParseFromFilenameTest(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromFilename_Route04Map.jpeg");
+        }
 
-        //[TestMethod]
-        //public void FuzzyFormatParser2_ParseFuzzyFormat2FromFilestream_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromFilestream(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromFilestream_Route04Map.jpeg");
-        //}
+        [TestMethod]
+        public void FuzzyFormatParser2_ParseFuzzyFormat2FromFilestream_ReturnsCorrectResult()
+        {
+            PerformParseFromFilestream(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromFilestream_Route04Map.jpeg");
+        }
 
-        //[TestMethod]
-        //public void FuzzyFormatParser2_ParseFuzzyFormat2FromByteArray_ReturnsCorrectResult()
-        //{
-        //    PerformParseFromByteArray(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromByteArray_Route04Map.jpeg");
-        //}
+        [TestMethod]
+        public void FuzzyFormatParser2_ParseFuzzyFormat2FromByteArray_ReturnsCorrectResult()
+        {
+            PerformParseFromByteArray(new FuzzyFormat2Parser(), TestPaths.Route04, Route04ExpectedOutput, "Route04Map_FuzzyFormatParser2_ParseFuzzyFormat2FromByteArray_Route04Map.jpeg");
+        }
 
         [TestMethod]
         public void GpxXmlParserForWebContent_ParseGpxFromFilename_ReturnsCorrectResult()
