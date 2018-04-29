@@ -1,15 +1,13 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Xml.Linq;
 using System.Globalization;
 using System.Linq;
-using System.Xml;
 using PV178.Homeworks.HW05.Model;
-using System.Collections.Generic;
+
 
 namespace PV178.Homeworks.HW05.Parsers.GpxParsers
 {
-    public class GpxXmlParser : IGpsParser
+    public class GpxXmlParser : Parser
     {
         #region XmlElementNames
 
@@ -21,16 +19,7 @@ namespace PV178.Homeworks.HW05.Parsers.GpxParsers
 
         #endregion
 
-        public Track ParseTrack(string filePath)
-        {
-            // abstraktni tridy
-            using (FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
-            {
-                return ParseTrack(stream);
-            }
-        }
-
-        public Track ParseTrack(Stream stream)
+        public override Track ParseTrack(Stream stream)
         {
             // utils, pomocne metody pro parsovani souradnic
             XElement root = XElement.Load(stream);  // uzavrit stream?
@@ -44,14 +33,6 @@ namespace PV178.Homeworks.HW05.Parsers.GpxParsers
                 .Select(x => x.coordinate)
                 .ToList();
             return new Track(gps);
-        }
-
-        public Track ParseTrack(byte[] bytes)
-        {
-            using (Stream stream = new MemoryStream(bytes))
-            {
-                return ParseTrack(stream);
-            }
         }
     }
 }
