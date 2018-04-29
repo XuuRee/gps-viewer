@@ -1,8 +1,8 @@
 ﻿using System.IO;
-using System.Xml.Linq;
-using System.Globalization;
 using System.Linq;
+using System.Xml.Linq;
 using PV178.Homeworks.HW05.Model;
+using PV178.Homeworks.HW05.Utils;
 
 
 namespace PV178.Homeworks.HW05.Parsers.GpxParsers
@@ -21,14 +21,13 @@ namespace PV178.Homeworks.HW05.Parsers.GpxParsers
 
         public override Track ParseTrack(Stream stream)
         {
-            // utils, pomocne metody pro parsovani souradnic
-            XElement root = XElement.Load(stream);  // uzavrit stream?
+            XElement root = XElement.Load(stream);
             var gps = root.Element(TrackElement)
                 .Elements(TrackSequenceElement)
                 .Elements(TrackpointElement)
                 .Select(x => new {
-                    coordinate = new GpsCoordinates(double.Parse(x.FirstAttribute.Value, CultureInfo.InvariantCulture),
-                        double.Parse(x.LastAttribute.Value, CultureInfo.InvariantCulture))
+                    coordinate = new GpsCoordinates(Helpers.ParseDouble(x.FirstAttribute.Value),
+                        Helpers.ParseDouble(x.LastAttribute.Value))
                 })
                 .Select(x => x.coordinate)
                 .ToList();
