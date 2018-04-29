@@ -24,7 +24,6 @@ namespace PV178.Homeworks.HW05.Utils
                 {
                     SaveResponse(file, dataStream);
                 }
-                // TODO: add your code and call SaveResponse(...)
             }           
         }
 
@@ -35,7 +34,7 @@ namespace PV178.Homeworks.HW05.Utils
         /// <param name="dataStream">Stream with GPX data</param>
         private static void SaveResponse(FileStream fileStream, Stream dataStream)
         {
-            using (MemoryStream memory = new MemoryStream())    // bad !
+            using (MemoryStream memory = new MemoryStream())
             {
                 dataStream.CopyTo(memory);
                 fileStream.Write(memory.ToArray(), 0, (int) memory.Length);

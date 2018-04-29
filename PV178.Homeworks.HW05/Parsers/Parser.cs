@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using PV178.Homeworks.HW05.Model;
 using PV178.Homeworks.HW05.Utils;
 
+
 namespace PV178.Homeworks.HW05.Parsers
 {
     public abstract class Parser : IGpsParser
@@ -45,7 +46,12 @@ namespace PV178.Homeworks.HW05.Parsers
             }
             return new GpsCoordinates(coordinates.Item1, coordinates.Item2);
         }
-        
+
+        /// <summary>
+        /// Get raw coordinates from parse line.
+        /// </summary>
+        /// <param name="line">parse line</param>
+        /// <returns>Tuple with latitude and longitude.</returns>
         private Tuple<double, double> GetRawCoordinates(string line)
         {
             double latitude, longitude;

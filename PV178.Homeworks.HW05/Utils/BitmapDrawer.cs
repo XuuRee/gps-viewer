@@ -48,7 +48,7 @@ namespace PV178.Homeworks.HW05.Utils
         {
             MemoryStream memory = new MemoryStream();
             bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Jpeg);
-            memory.Seek(0, SeekOrigin.Begin);       // begining?
+            //memory.Seek(0, SeekOrigin.Begin);
             return memory;
         }
 
